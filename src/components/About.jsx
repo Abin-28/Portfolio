@@ -95,14 +95,29 @@ const About = () => {
             <div className="pt-3">
               <p className="text-sm text-gray-700 leading-relaxed mb-3">
                 I am a passionate AI/ML Engineer and Full Stack Developer with a strong foundation in computer science. 
-                Currently working at INFINITA AI, I specialize in developing innovative solutions using machine learning 
+                I specialize in developing innovative solutions using machine learning 
                 and web technologies.
               </p>
-              <p className="text-sm text-gray-700 leading-relaxed mb-3">
-                My journey in tech has equipped me with diverse skills in both AI/ML and web development, 
-                allowing me to create impactful solutions that bridge these domains. I&apos;m constantly learning 
-                and adapting to new technologies to stay at the forefront of innovation.
-              </p>
+              <div className="text-sm text-gray-700 leading-relaxed mb-3">
+                <p>I contributed to the end-to-end design and development of full-stack AI projects, including:</p>
+                <ul className="list-disc pl-5 mt-2">
+                  <li>A memory-based AI agent platform</li>
+                  <li>An AI-powered booking system</li>
+                  <li>Multiple custom AI agents</li>
+                </ul>
+              </div>
+              <div className="text-sm text-gray-700 leading-relaxed mb-3">
+                <p>Key Responsibilities:</p>
+                <ul className="list-disc pl-5 mt-2">
+                  <li>Integrated LLM models for natural language understanding</li>
+                  <li>Built real-time streaming capabilities using WebSockets</li>
+                  <li>Designed and implemented conversational flows for dynamic user interactions</li>
+                  <li>Developed and tested RESTful APIs using Postman</li>
+                  <li>Containerized services using Docker for scalable deployment</li>
+                  <li>Deployed frontend apps via Vercel and managed backend infrastructure on Digital Ocean</li>
+                  <li>Used Git for version control and collaborated effectively via GitHub</li>
+                </ul>
+              </div>
               
               <div className="mt-4">
                 <button
@@ -116,51 +131,53 @@ const About = () => {
             </div>
           </motion.div>
 
-          <div>
+          <div className="pt-4">
             <motion.h3
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-lg font-bold text-purple-600 mb-3 flex items-center space-x-2"
+              className="text-lg font-bold text-purple-600 mb-4 flex items-center space-x-2 pt-2"
             >
               <span>Education</span>
             </motion.h3>
 
-            <EducationCard
-              institution="College of Engineering Chengannur Kerala"
-              degree="Bachelor of Technology in Computer Science and Engineering"
-              year="2020 - 2024"
-              percentage="CGPA: 8.9"
-              delay={0.2}
-              location="Engineering College Road, Chengannur, Alappuzha, Kerala 689121"
-              mapLink="https://www.google.com/maps/place/College+of+Engineering+Chengannur/@9.3173306,76.6149107,17z/data=!3m1!4b1!4m14!1m7!3m6!1s0x3b0622ea027eb08f:0x41105b207db821c6!2sCollege+of+Engineering+Chengannur!8m2!3d9.3173253!4d76.6174856!16zL20vMDhxODg3!3m5!1s0x3b0622ea027eb08f:0x41105b207db821c6!8m2!3d9.3173253!4d76.6174856!16zL20vMDhxODg3?authuser=0&entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D"
-              website="https://ceconline.edu/"
-              place="College"
-            />
+            <div className="space-y-4">
+              <EducationCard
+                institution="College of Engineering Chengannur Kerala"
+                degree="Bachelor of Technology in Computer Science and Engineering"
+                year="2020 - 2024"
+                percentage="CGPA: 8.9"
+                delay={0.2}
+                location="Engineering College Road, Chengannur, Alappuzha, Kerala 689121"
+                mapLink="https://www.google.com/maps/place/College+of+Engineering+Chengannur/@9.3173306,76.6149107,17z/data=!3m1!4b1!4m14!1m7!3m6!1s0x3b0622ea027eb08f:0x41105b207db821c6!2sCollege+of+Engineering+Chengannur!8m2!3d9.3173253!4d76.6174856!16zL20vMDhxODg3!3m5!1s0x3b0622ea027eb08f:0x41105b207db821c6!8m2!3d9.3173253!4d76.6174856!16zL20vMDhxODg3?authuser=0&entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D"
+                website="https://ceconline.edu/"
+                place="College"
+              />
 
-            <EducationCard
-              institution="Kerala School VikasPuri New Delhi"
-              degree="XII (CBSE)"
-              year="2018 - 2020"
-              percentage="89.6%"
-              delay={0.4}
-              location="KG3/13, JJ Colony, Block KG 3, Vikaspuri, Delhi, 110018"
-              mapLink="https://www.google.com/maps/place/Kerala+School+Vikaspuri/@28.6329005,77.0765858,17z/data=!4m6!3m5!1s0x390d04ea8b404ef7:0xdb2e0ca0acfd85d4!8m2!3d28.6329005!4d77.0765858!16s%2Fg%2F11b7y9mcp6?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
-              website="https://www.keralaschoolvikaspuri.org"
-              place="School"
-            />
+              <EducationCard
+                institution="Kerala School VikasPuri New Delhi"
+                degree="XII (CBSE)"
+                year="2018 - 2020"
+                percentage="89.6%"
+                delay={0.4}
+                location="KG3/13, JJ Colony, Block KG 3, Vikaspuri, Delhi, 110018"
+                mapLink="https://www.google.com/maps/place/Kerala+School+Vikaspuri/@28.6329005,77.0765858,17z/data=!4m6!3m5!1s0x390d04ea8b404ef7:0xdb2e0ca0acfd85d4!8m2!3d28.6329005!4d77.0765858!16s%2Fg%2F11b7y9mcp6?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                website="https://www.keralaschoolvikaspuri.org"
+                place="School"
+              />
 
-            <EducationCard
-              institution="Kerala School VikasPuri New Delhi"
-              degree="X (CBSE)"
-              year="2006 - 2018"
-              percentage="84%"
-              delay={0.6}
-              location="KG3/13, JJ Colony, Block KG 3, Vikaspuri, Delhi, 110018"
-              mapLink="https://www.google.com/maps/place/Kerala+School+Vikaspuri/@28.6329005,77.0765858,17z/data=!4m6!3m5!1s0x390d04ea8b404ef7:0xdb2e0ca0acfd85d4!8m2!3d28.6329005!4d77.0765858!16s%2Fg%2F11b7y9mcp6?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
-              website="https://www.keralaschoolvikaspuri.org"
-              place="School"
-            />
+              <EducationCard
+                institution="Kerala School VikasPuri New Delhi"
+                degree="X (CBSE)"
+                year="2006 - 2018"
+                percentage="84%"
+                delay={0.6}
+                location="KG3/13, JJ Colony, Block KG 3, Vikaspuri, Delhi, 110018"
+                mapLink="https://www.google.com/maps/place/Kerala+School+Vikaspuri/@28.6329005,77.0765858,17z/data=!4m6!3m5!1s0x390d04ea8b404ef7:0xdb2e0ca0acfd85d4!8m2!3d28.6329005!4d77.0765858!16s%2Fg%2F11b7y9mcp6?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                website="https://www.keralaschoolvikaspuri.org"
+                place="School"
+              />
+            </div>
           </div>
         </div>
       </div>
