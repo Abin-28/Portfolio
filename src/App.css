@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* Custom scroll behavior */
 html {
@@ -62,15 +62,40 @@ section {
 
 /* Button styles */
 .primary-button {
-  @apply px-6 py-3 bg-purple-600 text-white rounded-full font-medium 
-         hover:bg-purple-700 transition-colors duration-300 
-         focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2;
+  padding: 0.75rem 1.5rem;
+  background-color: #9333ea;
+  color: white;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+  background-color: #7e22ce;
+}
+
+.primary-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #a855f7, 0 0 0 4px #f3e8ff;
 }
 
 .secondary-button {
-  @apply px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-full font-medium 
-         hover:bg-purple-600 hover:text-white transition-all duration-300 
-         focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #9333ea;
+  color: #9333ea;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.secondary-button:hover {
+  background-color: #9333ea;
+  color: white;
+}
+
+.secondary-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #a855f7, 0 0 0 4px #f3e8ff;
 }
 
 /* Animated background */
