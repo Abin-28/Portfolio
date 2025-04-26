@@ -44,3 +44,5 @@ pnpm-workspace.yaml
 #cursor
 .cursorrules
 
+#dist
+dist/

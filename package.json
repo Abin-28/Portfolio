@@ -24,8 +24,8 @@
     "test": "vitest",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
