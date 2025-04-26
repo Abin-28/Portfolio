@@ -32,12 +32,12 @@ function AnimatedRoutes() {
       
       <main className="min-h-screen">
         <Routes location={location}>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/Portfolio/" element={<Hero />} />
+          <Route path="/Portfolio/about" element={<About />} />
+          <Route path="/Portfolio/experience" element={<Experience />} />
+          <Route path="/Portfolio/projects" element={<Projects />} />
+          <Route path="/Portfolio/skills" element={<Skills />} />
+          <Route path="/Portfolio/contact" element={<Contact />} />
         </Routes>
       </main>
     </>

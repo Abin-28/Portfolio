@@ -57,7 +57,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
         >
           <motion.button
-            onClick={() => navigate('/experience')}
+            onClick={() => navigate('/Portfolio/experience')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-2.5 bg-purple-500 text-white rounded-lg font-medium hover:bg-purple-600 transition-colors flex items-center justify-center text-sm"
@@ -72,7 +72,7 @@ const Hero = () => {
             </motion.span>
           </motion.button>
           <motion.button
-            onClick={() => navigate('/contact')}
+            onClick={() => navigate('/Portfolio/contact')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-2.5 border border-purple-400 text-purple-400 rounded-lg font-medium hover:bg-purple-400/10 transition-all text-sm"
@@ -91,7 +91,7 @@ const Hero = () => {
           className="w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden"
         >
           <img
-            src="/a_person_organizing_files.svg"
+            src="/Portfolio/a_person_organizing_files.svg"
             alt="Developer Illustration"
             className="w-full h-full object-contain p-4 md:p-6"
           />

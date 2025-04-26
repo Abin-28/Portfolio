@@ -97,7 +97,7 @@ const PDFViewer = ({ isOpen, onClose, pdfPath, title = "PDF Preview" }) => {
           <div className="flex-1 overflow-auto p-2 sm:p-3 bg-purple-50 min-h-0">
             <div className="flex justify-center min-w-fit">
               <Document
-                file={`/${pdfPath}`}
+                file={`/Portfolio/${pdfPath}`}
                 onLoadSuccess={onDocumentLoadSuccess}
                 loading={
                   <div className="text-center py-2 sm:py-4">
