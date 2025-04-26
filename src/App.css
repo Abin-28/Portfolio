@@ -121,3 +121,26 @@ section {
   text-orientation: mixed;
   transform: rotate(180deg);
 } 
+
+.pdf-viewer-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.pdf-viewer-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pdf-viewer-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #9333ea;
+  border-radius: 20px;
+}
+
+.pdf-viewer-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #7e22ce;
+}
+
+.pdf-viewer-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #9333ea transparent;
+} 

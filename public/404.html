@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio - Redirecting...</title>
+    <script>
+        // Get the current path after /Portfolio/
+        const segment = window.location.pathname.replace('/Portfolio/', '');
+        // Store it in session storage
+        sessionStorage.setItem('redirect', segment);
+        // Redirect to the main page
+        window.location.replace('/Portfolio/');
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html> 

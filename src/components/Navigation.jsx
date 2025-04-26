@@ -9,15 +9,15 @@ const Navigation = () => {
   const location = useLocation();
   
   const navItems = [
-    { id: '/Portfolio/', label: 'Home', icon: FaHome },
-    { id: '/Portfolio/about', label: 'About', icon: FaUser },
-    { id: '/Portfolio/experience', label: 'Experience', icon: FaBriefcase },
-    { id: '/Portfolio/projects', label: 'Projects', icon: FaCode },
-    { id: '/Portfolio/skills', label: 'Skills', icon: FaTools },
-    { id: '/Portfolio/contact', label: 'Contact', icon: FaEnvelope }
+    { id: '/', label: 'Home', icon: FaHome },
+    { id: '/about', label: 'About', icon: FaUser },
+    { id: '/experience', label: 'Experience', icon: FaBriefcase },
+    { id: '/projects', label: 'Projects', icon: FaCode },
+    { id: '/skills', label: 'Skills', icon: FaTools },
+    { id: '/contact', label: 'Contact', icon: FaEnvelope }
   ];
 
-  const isHome = location.pathname === '/Portfolio/';
+  const isHome = location.pathname === '/';
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
@@ -32,12 +32,12 @@ function AnimatedRoutes() {
       
       <main className="min-h-screen">
         <Routes location={location}>
-          <Route path="/Portfolio/" element={<Hero />} />
-          <Route path="/Portfolio/about" element={<About />} />
-          <Route path="/Portfolio/experience" element={<Experience />} />
-          <Route path="/Portfolio/projects" element={<Projects />} />
-          <Route path="/Portfolio/skills" element={<Skills />} />
-          <Route path="/Portfolio/contact" element={<Contact />} />
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes, FaSearchPlus, FaSearchMinus } from 'react-icons/fa';
 import { Document, Page, pdfjs } from 'react-pdf';
@@ -41,13 +42,14 @@ const PDFViewer = ({ isOpen, onClose, pdfPath, title = "PDF Preview" }) => {
 
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-2 sm:p-4"
+        className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-2 sm:p-4"
+        style={{ zIndex: 9999 }}
         onClick={onClose}
       >
         <motion.div
@@ -55,6 +57,7 @@ const PDFViewer = ({ isOpen, onClose, pdfPath, title = "PDF Preview" }) => {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           className="bg-white rounded-lg shadow-2xl w-full max-w-[95vw] sm:max-w-4xl max-h-[90vh] sm:max-h-[80vh] overflow-hidden flex flex-col"
+          style={{ zIndex: 10000 }}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
@@ -94,7 +97,7 @@ const PDFViewer = ({ isOpen, onClose, pdfPath, title = "PDF Preview" }) => {
           </div>
           
           {/* PDF Content */}
-          <div className="flex-1 overflow-auto p-2 sm:p-3 bg-purple-50 min-h-0">
+          <div className="flex-1 overflow-auto p-2 sm:p-3 bg-purple-50 min-h-0 pdf-viewer-scrollbar">
             <div className="flex justify-center min-w-fit">
               <Document
                 file={`/Portfolio/${pdfPath}`}
@@ -128,6 +131,8 @@ const PDFViewer = ({ isOpen, onClose, pdfPath, title = "PDF Preview" }) => {
       </motion.div>
     </AnimatePresence>
   );
+
+  return createPortal(modalContent, document.body);
 };
 
 export default PDFViewer; 
