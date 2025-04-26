@@ -1,0 +1,85 @@
+# GitHub Pages Deployment Guide for Vite React Project
+
+## Prerequisites
+1. Make sure you have a GitHub account
+2. Your repository must be public
+3. Your project should be pushed to GitHub at: https://github.com/<username>/Portfolio
+
+## Step 1: Install Required Package
+```bash
+# Using npm
+npm install gh-pages --save-dev
+
+# Using pnpm
+pnpm add -D gh-pages
+```
+
+## Step 2: Configure package.json
+1. Add homepage field:
+```json
+{
+  "homepage": "https://<username>.github.io/Portfolio"
+}
+```
+
+2. Add deployment scripts:
+```json
+{
+  "scripts": {
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}
+```
+
+## Step 3: Configure vite.config.js
+Add base URL in vite.config.js:
+```javascript
+export default defineConfig({
+  base: '/Portfolio/',
+  // ... other config
+})
+```
+
+## Step 4: Deploy
+1. Commit and push your changes to GitHub:
+```bash
+git add .
+git commit -m "setup github pages"
+git push origin main
+```
+
+2. Run the deploy command:
+```bash
+pnpm run deploy
+```
+This will:
+- Build your project
+- Create a gh-pages branch (if it doesn't exist)
+- Push the built files to gh-pages branch
+
+## Step 5: Configure GitHub Pages Settings
+1. Go to your GitHub repository
+2. Navigate to Settings > Pages
+3. Under "Source", select "Deploy from a branch"
+4. Select "gh-pages" branch and "/ (root)" folder
+5. Click Save
+
+## Step 6: Access Your Site
+- Your site will be available at: https://<username>.github.io/Portfolio
+- It may take a few minutes for the changes to be published
+
+## Updating Your Site
+Whenever you make changes to your project:
+1. Commit and push your changes to main branch
+2. Run `pnpm run deploy` to update the deployed site
+
+## Troubleshooting
+- If deployment fails, check if your repository is public
+- Ensure all paths in your project use correct casing (GitHub Pages is case-sensitive)
+- Clear browser cache if changes are not reflecting
+- Check GitHub Actions tab for deployment status
+
+## Note
+- Don't delete the gh-pages branch
+- Site will remain hosted as long as repository exists and is public 

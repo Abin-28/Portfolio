@@ -11,7 +11,7 @@ const ProgrammerVector = ({ className }) => {
     "const developer = {",
     "  name : \"Abin Skaria\",",
     "  skills : [\"AI/ML\", \"Full Stack\"],",
-    "  languages : [\"Python\", \"JavaScript\", \"Java\", \"C++\", \"SQL\"],",
+    "  languages : [\"Python\", \"JavaScript\", \"Java\", \"C\", \"SQL\"],",
     "  passion : \"Building the future\"",
     "};"
   ], []);
