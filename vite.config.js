@@ -7,12 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   base: '/Portfolio/',
-  plugins: [
-    react({
-      jsxImportSource: 'react',
-      jsxRuntime: 'automatic',
-    }),
-  ],
+  plugins: [react()],
   css: {
     postcss: './postcss.config.js',
   },
@@ -29,6 +24,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
     sourcemap: true,
     minify: 'terser',
     terserOptions: {
