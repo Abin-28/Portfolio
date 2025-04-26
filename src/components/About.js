@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGraduationCap, FaUserTie, FaFilePdf, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
-import PDFViewer from './PDFViewer';
+import PDFViewer from '@/components/subcomponents/PDFViewer';
 
 const EducationCard = ({ institution, degree, year, percentage, delay, location, mapLink, website, place }) => {
   const [ref, inView] = useInView({
@@ -100,7 +100,7 @@ const About = () => {
               </p>
               <p className="text-sm text-gray-700 leading-relaxed mb-3">
                 My journey in tech has equipped me with diverse skills in both AI/ML and web development, 
-                allowing me to create impactful solutions that bridge these domains. I'm constantly learning 
+                allowing me to create impactful solutions that bridge these domains. I&apos;m constantly learning 
                 and adapting to new technologies to stay at the forefront of innovation.
               </p>
               

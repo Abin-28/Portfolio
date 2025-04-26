@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ProgrammerVector from './vectors/ProgrammerVector';
+import ProgrammerVector from '@/components/subcomponents/ProgrammerVector';
 
 const Hero = ({ setCurrentPage }) => {
   return (

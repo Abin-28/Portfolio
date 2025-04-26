@@ -47,7 +47,7 @@ const Contact = () => {
           <h2 className="text-4xl font-bold text-purple-600 mb-4">Get In Touch</h2>
           <div className="w-24 h-1 bg-purple-600 mx-auto rounded-full"></div>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Feel free to reach out to me through any of these channels. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            Feel free to reach out to me through any of these channels. I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>
         </motion.div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaHome, FaUser, FaBriefcase, FaCode, FaTools, FaEnvelope } from 'react-icons/fa';
-import PDFViewer from './PDFViewer';
+import PDFViewer from '@/components/subcomponents/PDFViewer';
 
 const Navigation = ({ currentPage, setCurrentPage }) => {
   const [showPDF, setShowPDF] = useState(false);

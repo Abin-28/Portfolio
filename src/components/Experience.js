@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaCertificate } from 'react-icons/fa';
-import PDFViewer from './PDFViewer';
+import PDFViewer from '@/components/subcomponents/PDFViewer';
 
 const ExperienceCard = ({ title, company, location, date, description, delay, onViewCertificate, hasCertificate }) => {
   const [ref, inView] = useInView({
