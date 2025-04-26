@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaCode, FaBrain, FaTools, FaServer, FaDatabase, FaMobile } from 'react-icons/fa';
+import { FaCode, FaBrain, FaTools, FaServer, FaDatabase, FaUsers } from 'react-icons/fa';
 
 const SkillCategory = ({ title, skills, icon: Icon, delay }) => {
   const [ref, inView] = useInView({
@@ -44,53 +44,53 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend Development",
-      skills: ["React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+      skills: ["JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Next.js", "React"],
       icon: FaCode
     },
     {
       title: "Backend Development",
-      skills: ["Node.js", "Python", "Express.js", "REST APIs", "GraphQL"],
+      skills: ["Node.js", "Python", "Fastify", "REST APIs", "Flask", "Postman"],
       icon: FaServer
     },
     {
       title: "AI/ML & Data Science",
-      skills: ["Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "Computer Vision", "NLP"],
+      skills: ["Machine Learning", "LLMs", "RAG", "NLP", "Computer Vision", "Prompt Engineering", "Voiceflow"],
       icon: FaBrain
     },
     {
       title: "Database & Storage",
-      skills: ["MongoDB", "SQL", "PostgreSQL", "Redis", "Firebase"],
+      skills: ["MongoDB", "SQL", "PostgreSQL", "Supabase", "Firebase"],
       icon: FaDatabase
     },
     {
       title: "DevOps & Tools",
-      skills: ["Git", "Docker", "AWS", "CI/CD", "VS Code", "Jupyter"],
+      skills: ["Git", "GitHub", "Docker", "DigitalOcean", "CI/CD", "VS Code", "Jupyter", "Make"],
       icon: FaTools
     },
     {
-      title: "Mobile Development",
-      skills: ["React Native", "Flutter", "Responsive Design"],
-      icon: FaMobile
+      title: "Productivity & Collaboration",
+      skills: ["Notion", "Slack", "Linear", "Project Management", "Technical Documentation"],
+      icon: FaUsers
     }
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-b from-purple-50 to-white">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-12 md:py-20 bg-gradient-to-b from-purple-50 to-white pl-16 sm:pl-20">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-4xl font-bold text-purple-600 mb-4">Skills & Expertise</h2>
-          <div className="w-24 h-1 bg-purple-600 mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-bold text-purple-600 mb-4">Skills & Expertise</h2>
+          <div className="w-20 md:w-24 h-1 bg-purple-600 mx-auto rounded-full"></div>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base px-4">
             A comprehensive overview of my technical skills and expertise across various domains of software development
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4">
           {skillCategories.map((category, index) => (
             <SkillCategory
               key={index}

@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 const ProgrammerVector = ({ className }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentLine, setCurrentLine] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
+  const [showText, setShowText] = useState(false);
 
-  const codeLines = [
+  const codeLines = useMemo(() => [
     "const developer = {",
     "  name : \"Abin Skaria\",",
     "  skills : [\"AI/ML\", \"Full Stack\"],",
     "  languages : [\"Python\", \"JavaScript\", \"Java\", \"C++\", \"SQL\"],",
     "  passion : \"Building the future\"",
     "};"
-  ];
+  ], []);
 
   useEffect(() => {
     if (!isTyping) return;
@@ -22,12 +23,12 @@ const ProgrammerVector = ({ className }) => {
     const currentLength = displayedText.length;
 
     if (currentLength < currentText.length) {
-      const timer = setTimeout(() => {
+      const timer = window.setTimeout(() => {
         setDisplayedText(currentText.substring(0, currentLength + 1));
       }, 50);
-      return () => clearTimeout(timer);
+      return () => window.clearTimeout(timer);
     } else {
-      const timer = setTimeout(() => {
+      const timer = window.setTimeout(() => {
         if (currentLine < codeLines.length - 1) {
           setCurrentLine(currentLine + 1);
           setDisplayedText('');
@@ -40,13 +41,35 @@ const ProgrammerVector = ({ className }) => {
           }, 3000);
         }
       }, 500);
-      return () => clearTimeout(timer);
+      return () => window.clearTimeout(timer);
     }
-  }, [displayedText, currentLine, isTyping]);
+  }, [displayedText, currentLine, isTyping, codeLines]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setShowText(true);
+    }, 1000);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (showText) {
+      const timer = window.setTimeout(() => {
+        setShowText(false);
+      }, 3000);
+
+      return () => {
+        window.clearTimeout(timer);
+      };
+    }
+  }, [showText]);
 
   const getTextColor = (line) => {
     if (line.includes('const')) return '#569CD6'; // Blue for keywords
-    if (line.includes('\"')) return '#CE9178'; // Orange for strings
+    if (line.includes('"')) return '#CE9178'; // Orange for strings
     if (line.includes('{') || line.includes('}')) return '#569CD6'; // blue for arrays
     return '#4f46e5'; // Default color
   };
