@@ -16,13 +16,13 @@ function AnimatedRoutes() {
   const [showTransition, setShowTransition] = useState(true);
 
   useEffect(() => {
-    // Match the total duration of TransitionEffect (0.8s base + 0.4s delay)
+    // Reduced the timeout to match TransitionEffect's total duration (0.8s + 0.4s delay)
     const timer = setTimeout(() => {
       setShowTransition(false);
-    }, 1200);
+    }, 800);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [location.pathname]); // Added location.pathname dependency to trigger on route changes
   
   return (
     <>
@@ -31,7 +31,7 @@ function AnimatedRoutes() {
       </AnimatePresence>
       
       <main className="min-h-screen">
-        <Routes location={location} key={location.pathname}>
+        <Routes location={location}>
           <Route path="/" element={<Hero />} />
           <Route path="/about" element={<About />} />
           <Route path="/experience" element={<Experience />} />
