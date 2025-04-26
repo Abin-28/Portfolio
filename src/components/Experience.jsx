@@ -57,16 +57,16 @@ const Experience = () => {
   const [showCertificate, setShowCertificate] = useState(false);
 
   return (
-    <section id="experience" className="min-h-screen py-12 bg-gradient-to-b from-purple-50 to-white">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="min-h-screen py-12 md:py-20 bg-gradient-to-b from-purple-50 to-white pl-16 sm:pl-20">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl font-bold text-purple-600 mb-2">Work Experience</h2>
-          <div className="w-20 h-1 bg-purple-600 mx-auto rounded-full"></div>
+          <h2 className="text-2xl md:text-3xl font-bold text-purple-600 mb-2">Work Experience</h2>
+          <div className="w-16 md:w-20 h-1 bg-purple-600 mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
