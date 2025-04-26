@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  base: '/Portfolio/',
+  base: './',
   plugins: [
     react({
       jsxImportSource: 'react',
@@ -37,6 +37,11 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
