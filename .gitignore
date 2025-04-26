@@ -34,3 +34,13 @@ yarn-error.log*
 .Trashes
 ehthumbs.db
 Thumbs.db 
+
+# pnpm-lock.yaml
+pnpm-lock.yaml
+
+# pnpm-workspace.yaml
+pnpm-workspace.yaml
+
+#cursor
+.cursorrules
+
