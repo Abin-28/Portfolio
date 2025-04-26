@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
@@ -10,37 +11,47 @@ import Contact from '@/components/Contact';
 import TransitionEffect from '@/components/subcomponents/TransitionEffect';
 import '@/App.css';
 
-function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+function AnimatedRoutes() {
+  const location = useLocation();
+  const [showTransition, setShowTransition] = useState(true);
 
-  const pages = {
-    home: <Hero setCurrentPage={setCurrentPage} />,
-    about: <About />,
-    experience: <Experience />,
-    projects: <Projects />,
-    skills: <Skills />,
-    contact: <Contact />
-  };
+  useEffect(() => {
+    // Match the total duration of TransitionEffect (0.8s base + 0.4s delay)
+    const timer = setTimeout(() => {
+      setShowTransition(false);
+    }, 1200);
 
+    return () => clearTimeout(timer);
+  }, []);
+  
   return (
-    <AnimatePresence mode='wait'>
-      <div className="app bg-gray-50">
-        <TransitionEffect />
-        <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        
-        <motion.main
-          key={currentPage}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5 }}
-          className="min-h-screen"
-        >
-          {pages[currentPage]}
-        </motion.main>
+    <>
+      <AnimatePresence mode='wait'>
+        {showTransition && <TransitionEffect />}
+      </AnimatePresence>
+      
+      <main className="min-h-screen">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+    </>
+  );
+}
 
+function App() {
+  return (
+    <Router>
+      <div className="app bg-gray-50">
+        <Navigation />
+        <AnimatedRoutes />
       </div>
-    </AnimatePresence>
+    </Router>
   );
 }
 
