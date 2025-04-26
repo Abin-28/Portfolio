@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import ProgrammerVector from '@/components/subcomponents/ProgrammerVector';
 
-const Hero = ({ setCurrentPage }) => {
+const Hero = () => {
+  const navigate = useNavigate();
+  
   return (
     <section id="home" className="h-screen w-full flex flex-col md:flex-row pl-16 bg-gradient-to-br from-indigo-900 via-purple-900 to-purple-800">
       {/* Left side - Content */}
@@ -54,7 +57,7 @@ const Hero = ({ setCurrentPage }) => {
           className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
         >
           <motion.button
-            onClick={() => setCurrentPage('experience')}
+            onClick={() => navigate('/experience')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-2.5 bg-purple-500 text-white rounded-lg font-medium hover:bg-purple-600 transition-colors flex items-center justify-center text-sm"
@@ -69,7 +72,7 @@ const Hero = ({ setCurrentPage }) => {
             </motion.span>
           </motion.button>
           <motion.button
-            onClick={() => setCurrentPage('contact')}
+            onClick={() => navigate('/contact')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-2.5 border border-purple-400 text-purple-400 rounded-lg font-medium hover:bg-purple-400/10 transition-all text-sm"
