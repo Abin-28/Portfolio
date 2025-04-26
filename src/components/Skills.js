@@ -1,0 +1,109 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { FaCode, FaBrain, FaTools, FaServer, FaDatabase, FaMobile } from 'react-icons/fa';
+
+const SkillCategory = ({ title, skills, icon: Icon, delay }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ y: 30, opacity: 0 }}
+      animate={inView ? { y: 0, opacity: 1 } : {}}
+      transition={{ duration: 0.5, delay }}
+      className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-purple-600"
+    >
+      <div className="flex items-center space-x-4 mb-6">
+        <div className="bg-purple-100 p-3 rounded-lg">
+          <Icon className="text-purple-600 text-xl" />
+        </div>
+        <h3 className="text-xl font-bold text-purple-600">{title}</h3>
+      </div>
+      <div className="flex flex-wrap gap-3">
+        {skills.map((skill, index) => (
+          <motion.span
+            key={index}
+            initial={{ scale: 0 }}
+            animate={inView ? { scale: 1 } : {}}
+            transition={{ duration: 0.3, delay: delay + index * 0.1 }}
+            className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors"
+          >
+            {skill}
+          </motion.span>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
+
+const Skills = () => {
+  const skillCategories = [
+    {
+      title: "Frontend Development",
+      skills: ["React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+      icon: FaCode
+    },
+    {
+      title: "Backend Development",
+      skills: ["Node.js", "Python", "Express.js", "REST APIs", "GraphQL"],
+      icon: FaServer
+    },
+    {
+      title: "AI/ML & Data Science",
+      skills: ["Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "Computer Vision", "NLP"],
+      icon: FaBrain
+    },
+    {
+      title: "Database & Storage",
+      skills: ["MongoDB", "SQL", "PostgreSQL", "Redis", "Firebase"],
+      icon: FaDatabase
+    },
+    {
+      title: "DevOps & Tools",
+      skills: ["Git", "Docker", "AWS", "CI/CD", "VS Code", "Jupyter"],
+      icon: FaTools
+    },
+    {
+      title: "Mobile Development",
+      skills: ["React Native", "Flutter", "Responsive Design"],
+      icon: FaMobile
+    }
+  ];
+
+  return (
+    <section id="skills" className="py-20 bg-gradient-to-b from-purple-50 to-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-purple-600 mb-4">Skills & Expertise</h2>
+          <div className="w-24 h-1 bg-purple-600 mx-auto rounded-full"></div>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            A comprehensive overview of my technical skills and expertise across various domains of software development
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {skillCategories.map((category, index) => (
+            <SkillCategory
+              key={index}
+              title={category.title}
+              skills={category.skills}
+              icon={category.icon}
+              delay={0.1 * index}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills; 
