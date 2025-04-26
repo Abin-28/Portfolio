@@ -104,6 +104,10 @@ const PDFViewer = ({ isOpen, onClose, pdfPath, title = "PDF Preview" }) => {
                     <div className="animate-pulse text-purple-600 text-sm sm:text-base">Loading PDF...</div>
                   </div>
                 }
+                transformGetDocumentParams={(params) => ({
+                  ...params,
+                  isEvalSupported: false
+                })}
               >
                 <Page
                   pageNumber={pageNumber}
