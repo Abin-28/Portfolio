@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaCode, FaBrain, FaTools, FaServer, FaDatabase, FaMobile } from 'react-icons/fa';
+import { FaCode, FaBrain, FaTools, FaServer, FaDatabase, FaUsers } from 'react-icons/fa';
 
 const SkillCategory = ({ title, skills, icon: Icon, delay }) => {
   const [ref, inView] = useInView({
@@ -44,33 +44,33 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend Development",
-      skills: ["React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+      skills: ["JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Next.js", "React"],
       icon: FaCode
     },
     {
       title: "Backend Development",
-      skills: ["Node.js", "Python", "Express.js", "REST APIs", "GraphQL"],
+      skills: ["Node.js", "Python", "Fastify", "REST APIs", "Flask", "Postman"],
       icon: FaServer
     },
     {
       title: "AI/ML & Data Science",
-      skills: ["Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "Computer Vision", "NLP"],
+      skills: ["Machine Learning", "LLMs", "RAG", "NLP", "Computer Vision", "Prompt Engineering", "Voiceflow"],
       icon: FaBrain
     },
     {
       title: "Database & Storage",
-      skills: ["MongoDB", "SQL", "PostgreSQL", "Redis", "Firebase"],
+      skills: ["MongoDB", "SQL", "PostgreSQL", "Supabase", "Firebase"],
       icon: FaDatabase
     },
     {
       title: "DevOps & Tools",
-      skills: ["Git", "Docker", "AWS", "CI/CD", "VS Code", "Jupyter"],
+      skills: ["Git", "GitHub", "Docker", "DigitalOcean", "CI/CD", "VS Code", "Jupyter", "Make"],
       icon: FaTools
     },
     {
-      title: "Mobile Development",
-      skills: ["React Native", "Flutter", "Responsive Design"],
-      icon: FaMobile
+      title: "Productivity & Collaboration",
+      skills: ["Notion", "Slack", "Linear", "Project Management", "Technical Documentation"],
+      icon: FaUsers
     }
   ];
 
