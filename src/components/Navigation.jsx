@@ -106,7 +106,7 @@ const Navigation = () => {
       <PDFViewer 
         isOpen={showPDF} 
         onClose={() => setShowPDF(false)} 
-        pdfPath="ABIN_SKARIA.pdf"
+        pdfPath="Abin_Skaria_Resume.pdf"
         title="Resume Preview"
       />
     </>

@@ -75,7 +75,7 @@ const Experience = () => {
             company="INFINITA AI"
             location="Remote"
             date="September 2024 - April 2025"
-            description="Working as a Junior AI/ML Engineer, contributing to machine learning projects and developing AI solutions. Specializing in deep learning, computer vision, and natural language processing applications."
+            description="Working as a Junior AI/ML Engineer, contributing to Full-stack projects and developing AI solutions."
             delay={0.2}
           />
 

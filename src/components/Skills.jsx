@@ -64,7 +64,7 @@ const Skills = () => {
     },
     {
       title: "DevOps & Tools",
-      skills: ["Git", "GitHub", "Docker", "DigitalOcean", "CI/CD", "VS Code", "Jupyter", "Make"],
+      skills: ["Git", "GitHub", "Docker", "DigitalOcean", "Vercel", "CI/CD", "VS Code", "Jupyter", "Make"],
       icon: FaTools
     },
     {

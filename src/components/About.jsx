@@ -93,29 +93,27 @@ const About = () => {
               </div>
             </div>
             <div className="pt-3">
-              <p className="text-sm text-gray-700 leading-relaxed mb-3">
+              <p className="text-xs text-gray-700 leading-relaxed mb-2">
                 I am a passionate AI/ML Engineer and Full Stack Developer with a strong foundation in computer science. 
                 I specialize in developing innovative solutions using machine learning 
                 and web technologies.
               </p>
-              <div className="text-sm text-gray-700 leading-relaxed mb-3">
+              <div className="text-xs text-gray-700 leading-relaxed mb-2">
                 <p>I contributed to the end-to-end design and development of full-stack AI projects, including:</p>
-                <ul className="list-disc pl-5 mt-2">
+                <ul className="list-disc pl-5 mt-1">
                   <li>A memory-based AI agent platform</li>
                   <li>An AI-powered booking system</li>
                   <li>Multiple custom AI agents</li>
                 </ul>
               </div>
-              <div className="text-sm text-gray-700 leading-relaxed mb-3">
+              <div className="text-xs text-gray-700 leading-relaxed mb-2">
                 <p>Key Responsibilities:</p>
-                <ul className="list-disc pl-5 mt-2">
-                  <li>Integrated LLM models for natural language understanding</li>
-                  <li>Built real-time streaming capabilities using WebSockets</li>
-                  <li>Designed and implemented conversational flows for dynamic user interactions</li>
-                  <li>Developed and tested RESTful APIs using Postman</li>
-                  <li>Containerized services using Docker for scalable deployment</li>
-                  <li>Deployed frontend apps via Vercel and managed backend infrastructure on Digital Ocean</li>
-                  <li>Used Git for version control and collaborated effectively via GitHub</li>
+                <ul className="list-disc pl-5 mt-1">
+                  <li>Built 3+ AI agents from scratch using prompt engineering and OpenAI API endpoints, integrating them with Voiceflow to create dynamic conversational systems for client use cases.</li>
+                  <li>Developed real-time back-end features using WebSockets, REST APIs and Node.js to enable live data exchange and seamless interaction across application components.</li>
+                  <li>Implemented core security features, including JWT-based authentication, session handling, and protected routes.</li>
+                  <li>Containerized and deployed microservices on Docker using DigitalOcean, and handled CI/CD with Vercel.</li>
+                  <li>Collaborated on 2+ full-stack projects in an Agile setup using Git, Linear and Slack for version control, task tracking, and sprint coordination.</li>
                 </ul>
               </div>
               
@@ -143,10 +141,10 @@ const About = () => {
 
             <div className="space-y-4">
               <EducationCard
-                institution="College of Engineering Chengannur Kerala"
+                institution="College of Engineering Chengannur"
                 degree="Bachelor of Technology in Computer Science and Engineering"
                 year="2020 - 2024"
-                percentage="CGPA: 8.9"
+                percentage="CGPA: 8.79"
                 delay={0.2}
                 location="Engineering College Road, Chengannur, Alappuzha, Kerala 689121"
                 mapLink="https://www.google.com/maps/place/College+of+Engineering+Chengannur/@9.3173306,76.6149107,17z/data=!3m1!4b1!4m14!1m7!3m6!1s0x3b0622ea027eb08f:0x41105b207db821c6!2sCollege+of+Engineering+Chengannur!8m2!3d9.3173253!4d76.6174856!16zL20vMDhxODg3!3m5!1s0x3b0622ea027eb08f:0x41105b207db821c6!8m2!3d9.3173253!4d76.6174856!16zL20vMDhxODg3?authuser=0&entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D"
@@ -155,7 +153,7 @@ const About = () => {
               />
 
               <EducationCard
-                institution="Kerala School VikasPuri New Delhi"
+                institution="Kerala School VikasPuri"
                 degree="XII (CBSE)"
                 year="2018 - 2020"
                 percentage="89.6%"
@@ -167,7 +165,7 @@ const About = () => {
               />
 
               <EducationCard
-                institution="Kerala School VikasPuri New Delhi"
+                institution="Kerala School VikasPuri"
                 degree="X (CBSE)"
                 year="2006 - 2018"
                 percentage="84%"
@@ -185,7 +183,7 @@ const About = () => {
       <PDFViewer 
         isOpen={showPDF} 
         onClose={() => setShowPDF(false)} 
-        pdfPath="ABIN_SKARIA.pdf"
+        pdfPath="Abin_Skaria_Resume.pdf"
         title="Resume Preview"
       />
     </section>
