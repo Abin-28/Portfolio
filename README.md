@@ -54,7 +54,7 @@ pnpm dev
 - `pnpm test` - Run tests
 - `pnpm lint` - Run ESLint
 - `pnpm lint:fix` - Fix ESLint issues
-- `pnpm deploy` - Deploy to GitHub Pages (runs build first)
+- `pnpm run deploy` - Deploy to GitHub Pages (runs build first)
 
 ## Build and Deploy
 
@@ -69,7 +69,7 @@ This will create an optimized production build in the `dist` folder.
 To deploy to GitHub Pages:
 
 ```bash
-pnpm deploy
+pnpm run deploy
 ```
 
 This command will build the project and deploy it to the GitHub Pages branch specified in your repository settings.
