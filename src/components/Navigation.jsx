@@ -34,8 +34,8 @@ const Navigation = () => {
           onClick={() => setShowPDF(true)}
         >
           <img 
-            src="/Portfolio/ABIN.png" 
-            alt="ABIN" 
+            src="/Portfolio/Abin.jpeg" 
+            alt="Abin" 
             className="w-full h-full object-contain"
             style={{ imageRendering: 'crisp-edges' }}
           />
