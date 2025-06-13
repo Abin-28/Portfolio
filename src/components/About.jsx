@@ -89,7 +89,7 @@ const About = () => {
                 <div className="bg-purple-100 p-2 md:p-2.5 rounded-lg">
                   <FaUserTie className="text-purple-600 text-lg md:text-xl" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-purple-600">Professional Summary</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-purple-600">Summary</h3>
               </div>
             </div>
             <div className="pt-3">
