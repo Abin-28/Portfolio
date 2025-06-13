@@ -93,20 +93,30 @@ const About = () => {
               </div>
             </div>
             <div className="pt-3">
-              <p className="text-xs text-gray-700 leading-relaxed mb-2">
-                I am a passionate AI/ML Engineer and Full Stack Developer with a strong foundation in computer science. 
-                I specialize in developing innovative solutions using machine learning 
-                and web technologies.
-              </p>
-              <div className="text-xs text-gray-700 leading-relaxed mb-2">
-                <p>I contributed to the end-to-end design and development of full-stack AI projects, including:</p>
-                <ul className="list-disc pl-5 mt-1">
-                  <li>A memory-based AI agent platform</li>
-                  <li>An AI-powered booking system</li>
-                  <li>Multiple custom AI agents</li>
-                </ul>
+              <div className="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-4">
+                <img
+                  src="/Portfolio/Abin.jpeg"
+                  alt="Abin"
+                  className="w-40 h-50 rounded-md object-cover border-2 border-purple-200 mt-4 mx-auto sm:mx-0"
+                  style={{ minWidth: '5rem' }}
+                />
+                <div className="flex-1 w-full">
+                  <p className="text-sm text-gray-700 leading-relaxed mb-2 mt-4">
+                    &quot;I am a passionate AI/ML Engineer and Full Stack Developer with a strong foundation in computer science. 
+                    I specialize in developing innovative solutions using machine learning 
+                    and web technologies.&quot;
+                  </p>
+                  <div className="text-xs text-gray-700 leading-relaxed mb-2 mt-2">
+                    <p>I contributed to the end-to-end design and development of full-stack AI projects, including:</p>
+                    <ul className="list-disc pl-5 mt-1">
+                      <li>A memory-based AI agent platform</li>
+                      <li>An AI-powered booking system</li>
+                      <li>Multiple custom AI agents</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div className="text-xs text-gray-700 leading-relaxed mb-2">
+              <div className="text-xs text-gray-700 leading-relaxed mb-2 mt-2">
                 <p>Key Responsibilities:</p>
                 <ul className="list-disc pl-5 mt-1">
                   <li>Built 3+ AI agents from scratch using prompt engineering and OpenAI API endpoints, integrating them with Voiceflow to create dynamic conversational systems for client use cases.</li>
@@ -116,7 +126,6 @@ const About = () => {
                   <li>Collaborated on 2+ full-stack projects in an Agile setup using Git, Linear and Slack for version control, task tracking, and sprint coordination.</li>
                 </ul>
               </div>
-              
               <div className="mt-4">
                 <button
                   onClick={() => setShowPDF(true)}
@@ -139,7 +148,7 @@ const About = () => {
               <span>Education</span>
             </motion.h3>
 
-            <div className="space-y-4">
+            <div className="space-y-10">
               <EducationCard
                 institution="College of Engineering Chengannur"
                 degree="Bachelor of Technology in Computer Science and Engineering"
