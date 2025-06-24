@@ -2,8 +2,6 @@
 
 A **modern, responsive portfolio website** built with **React**, **Vite**, **Framer Motion**, and **Tailwind CSS**.
 
----
-
 ## ✨ Features
 
 - 🎞️ Smooth animations and transitions using Framer Motion  
@@ -116,5 +114,4 @@ postcss.config.js      # 🧵 PostCSS plugins
 - 🧹 Update ESLint rules in `eslint.config.js`  
 - ⚙️ Configure build settings in `vite.config.js`  
 
----
 
