@@ -89,7 +89,7 @@ const Projects = () => {
     },
     {
       title: "SlideSense",
-      description: "A presentation controller made using hand gesture detection",
+      description: "A presentation controller, used to control the presentation slides using hand gesture detection.",
       technologies: ["Python", "HandTracking Module"],
       github: "https://github.com/Abin-28/Presentation_Controller"
     },

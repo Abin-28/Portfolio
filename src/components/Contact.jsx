@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const ContactItem = ({ icon, title, value, link, delay }) => {
   return (
@@ -96,13 +96,19 @@ const Contact = () => {
           </p>
           <div className="flex justify-center space-x-4 md:space-x-6 mt-4">
             <a
-              href="https://twitter.com/yourusername"
+              href="https://instagram.com/abin_skaria"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-purple-600 transition-colors"
             >
-              <FaTwitter className="text-xl md:text-2xl" />
+            <FaInstagram className="text-xl md:text-2xl text-gray-600 hover:text-purple-600 transition-colors" />
             </a>
+            {/* <a
+              href="https://twitter.com/abin_skaria"
+              target="_blank"
+              rel="noopener noreferrer"
+            > */}
+            <FaTwitter className="text-xl md:text-2xl text-gray-600 hover:text-purple-600 transition-colors" />
+            {/* </a> */}
           </div>
         </motion.div>
       </div>
