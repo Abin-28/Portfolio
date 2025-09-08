@@ -62,25 +62,42 @@ const ProjectCard = ({ title, description, technologies, link, github, delay }) 
 const Projects = () => {
   const projects = [
     {
-      title: "TREKZEN",
+      title: "Trekzen",
       description: "A tourist planning solution using Lin Kernighan and Nearest Neighbor algorithms for optimal route planning.",
       technologies: ["HTML", "CSS", "JavaScript", "NodeJS"],
       link: "https://trekzen11.glitch.me",
-      github: "https://github.com/yourusername/trekzen"
+      github: "https://github.com/Abin-28/Trekzen_Major-Project"
     },
     {
       title: "AyurHealth",
-      description: "An Ayurvedic disease predictor and remedy suggester using Random Forest Algorithm.",
+      description: "An Ayurvedic disease predictor using Random Forest Algorithm along with a remedy suggester.",
       technologies: ["JavaScript", "HTML", "CSS", "Python", "Machine Learning"],
-      link: "https://ayurhealth.glitch.me",
-      github: "https://github.com/yourusername/ayurhealth"
+      link: "https://ayurhealth.onrender.com/",
+      github: "https://github.com/Abin-28/AyurHealth_Mini-Project"
     },
     {
-      title: "Movie-Recommender",
+      title: "Bank Management",
+      description: "A bank management system made using Turbo C++ using language C++.",
+      technologies: ["C++", "Graphics Module"],
+      github: "https://github.com/Abin-28/Bank_Management"
+    },
+    {
+      title: "Movie Recommender",
       description: "A machine learning-based movie recommendation system using vectorization method.",
       technologies: ["Python", "Machine Learning", "Streamlit"],
-      link: "https://github.com/Abin-28/movie_recommends",
-      github: "https://github.com/Abin-28/movie_recommends"
+      github: "https://github.com/Abin-28/Movie_Recommender"
+    },
+    {
+      title: "SlideSense",
+      description: "A presentation controller made using hand gesture detection",
+      technologies: ["Python", "HandTracking Module"],
+      github: "https://github.com/Abin-28/Presentation_Controller"
+    },
+    {
+      title: "AuroraMart",
+      description: "A MERN Stack ecommerce website made using HTML, CSS, JavaScript, Node.js, Express and MongoDB database.",
+      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
+      github: "https://github.com/Abin-28/AuroraMart"
     },
   ];
 

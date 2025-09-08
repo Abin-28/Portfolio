@@ -3,6 +3,41 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaCode, FaBrain, FaTools, FaServer, FaDatabase, FaUsers } from 'react-icons/fa';
 
+const skillImageUrlMap = {
+  // Frontend
+  'javascript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+  'typescript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+  'html': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+  'css': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+  'tailwind css': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
+  'react': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+  'next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+  // Backend
+  'node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+  'python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+  'flask': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg',
+  'postman': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg',
+  // Databases
+  'mongodb': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+  'sql': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+  'postgresql': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+  'supabase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
+  'firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+  // DevOps & Tools
+  'git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+  'github': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+  'docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+  'digitalocean': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg',
+  'vercel': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg',
+  'jupyter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg',
+  'vs code': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
+  'make': 'https://cdn.brandfetch.io/make.com/6c2017c6676f4e1672370ae65d1d6a6a4387d853.svg',
+  // Productivity
+  'notion': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg',
+  'slack': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
+  'linear': 'https://cdn.brandfetch.io/linear.app/4296996d744f9f25792d4f24c3a1050a980721eb.svg',
+};
+
 const SkillCategory = ({ title, skills, icon: Icon, delay }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -24,17 +59,24 @@ const SkillCategory = ({ title, skills, icon: Icon, delay }) => {
         <h3 className="text-xl font-bold text-purple-600">{title}</h3>
       </div>
       <div className="flex flex-wrap gap-3">
-        {skills.map((skill, index) => (
-          <motion.span
-            key={index}
-            initial={{ scale: 0 }}
-            animate={inView ? { scale: 1 } : {}}
-            transition={{ duration: 0.3, delay: delay + index * 0.1 }}
-            className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors"
-          >
-            {skill}
-          </motion.span>
-        ))}
+        {skills.map((skill, index) => {
+          const key = String(skill).toLowerCase();
+          const imageUrl = skillImageUrlMap[key] || null;
+          return (
+            <motion.span
+              key={index}
+              initial={{ scale: 0 }}
+              animate={inView ? { scale: 1 } : {}}
+              transition={{ duration: 0.3, delay: delay + index * 0.1 }}
+              className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors flex items-center gap-2"
+            >
+              {imageUrl && (
+                <img src={imageUrl} alt={`${skill} logo`} className="w-4 h-4" loading="lazy" />
+              )}
+              {skill}
+            </motion.span>
+          );
+        })}
       </div>
     </motion.div>
   );
@@ -64,7 +106,7 @@ const Skills = () => {
     },
     {
       title: "DevOps & Tools",
-      skills: ["Git", "GitHub", "Docker", "DigitalOcean", "Vercel", "CI/CD", "VS Code", "Jupyter", "Make"],
+      skills: ["Git", "GitHub", "CI/CD", "Docker", "DigitalOcean", "Vercel", "VS Code", "Jupyter", "Make"],
       icon: FaTools
     },
     {
