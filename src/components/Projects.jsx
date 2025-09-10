@@ -65,15 +65,15 @@ const Projects = () => {
       title: "Trekzen",
       description: "A tourist planning solution using Lin Kernighan and Nearest Neighbor algorithms for optimal route planning.",
       technologies: ["HTML", "CSS", "JavaScript", "NodeJS"],
-      link: "https://trekzen11.glitch.me",
-      github: "https://github.com/Abin-28/Trekzen_Major-Project"
+      link: "https://trekzen.onrender.com",
+      github: "https://github.com/Abin-28/Trekzen"
     },
     {
       title: "AyurHealth",
       description: "An Ayurvedic disease predictor using Random Forest Algorithm along with a remedy suggester.",
       technologies: ["JavaScript", "HTML", "CSS", "Python", "Machine Learning"],
-      link: "https://ayurhealth.onrender.com/",
-      github: "https://github.com/Abin-28/AyurHealth_Mini-Project"
+      link: "https://ayurhealth.onrender.com",
+      github: "https://github.com/Abin-28/AyurHealth"
     },
     {
       title: "Bank Management",
