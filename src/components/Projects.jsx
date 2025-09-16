@@ -1,19 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 const ProjectCard = ({ title, description, technologies, link, github, delay }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
     <motion.div
-      ref={ref}
       initial={{ y: 50, opacity: 0 }}
-      animate={inView ? { y: 0, opacity: 1 } : {}}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay }}
       className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 border-l-4 border-purple-600"
     >
@@ -64,27 +57,28 @@ const Projects = () => {
     {
       title: "Trekzen",
       description: "A tourist planning solution using Lin Kernighan and Nearest Neighbor algorithms for optimal route planning.",
-      technologies: ["HTML", "CSS", "JavaScript", "NodeJS"],
+      technologies: ["NodeJS", "Express", "Firebase", "Leaflet Map", "Mapbox"],
       link: "https://trekzen.onrender.com",
       github: "https://github.com/Abin-28/Trekzen"
     },
     {
       title: "AyurHealth",
       description: "An Ayurvedic disease predictor using Random Forest Algorithm along with a remedy suggester.",
-      technologies: ["JavaScript", "HTML", "CSS", "Python", "Machine Learning"],
+      technologies: ["Python", "Machine Learning", "JavaScript", "HTML", "CSS"],
       link: "https://ayurhealth.onrender.com",
       github: "https://github.com/Abin-28/AyurHealth"
     },
     {
-      title: "Bank Management",
-      description: "A bank management system made using Turbo C++ using language C++.",
-      technologies: ["C++", "Graphics Module"],
-      github: "https://github.com/Abin-28/Bank_Management"
+      title: "LearnScope",
+      description: "AI Learning Platform used for web search and document Q&A by using Gemini AI API.",
+      technologies: ["Next.js", "React", "AI", "Search Engine", "Document Q&A"],
+      link: "https://learnscope.onrender.com",
+      github: "https://github.com/Abin-28/LearnScope"
     },
     {
       title: "Movie Recommender",
       description: "A machine learning-based movie recommendation system using vectorization method.",
-      technologies: ["Python", "Machine Learning", "Streamlit"],
+      technologies: ["Python", "Machine Learning", "Streamlit", "Jupyter"],
       github: "https://github.com/Abin-28/Movie_Recommender"
     },
     {
@@ -95,9 +89,27 @@ const Projects = () => {
     },
     {
       title: "AuroraMart",
-      description: "A MERN Stack ecommerce website made using HTML, CSS, JavaScript, Node.js, Express and MongoDB database.",
+      description: "A MERN Stack ecommerce website for buying and selling products.",
       technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
       github: "https://github.com/Abin-28/AuroraMart"
+    },
+    {
+      title: "Python Mini Games",
+      description: "Mini desktop arcade built with Python Tkinter featuring six mini games.",
+      technologies: ["Python", "Tkinter"],
+      github: "https://github.com/Abin-28/Python_Mini_Games"
+    },
+    {
+      title: "Bank Management",
+      description: "A bank management system made using Turbo C++ using language C++.",
+      technologies: ["C++", "Graphics Module"],
+      github: "https://github.com/Abin-28/Bank_Management"
+    },
+    {
+      title: "Large Files Uploader",
+      description: "A large files uploader using gitlfs to push large files to github.",
+      technologies: ["GitLFS", "GitHub"],
+      github: "https://github.com/Abin-28/Side_Hustle_Project-Large-Files"
     },
   ];
 
