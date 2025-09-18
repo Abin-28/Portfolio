@@ -83,7 +83,7 @@ const Contact = () => {
                       <FaHandshake className="w-12 h-12" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold">Thank You</h3>
+                  <h3 className="text-2xl font-bold">Welcome</h3>
                   <p className="mt-4 text-white/90">Do You Have Any Queries?</p>
                 </div>
               </div>
@@ -100,7 +100,7 @@ const Contact = () => {
                   <input type="hidden" name="_subject" value="New message from Abin's Portfolio" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_template" value="box" />
-                  <input type="hidden" name="_next" value={typeof window !== 'undefined' ? `${window.location.origin}/Portfolio/#contact` : '/Portfolio/#contact'} />
+                  <input type="hidden" name="_next" value={typeof window !== 'undefined' ? `${window.location.origin}/Portfolio/#/contact` : '/Portfolio/#/contact'} />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
@@ -171,7 +171,7 @@ const Contact = () => {
                       <FaHandshake className="w-12 h-12" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold">Thank You</h3>
+                  <h3 className="text-2xl font-bold">Welcome</h3>
                   <p className="mt-4 text-white/90">Do You Have Any Queries?</p>
                 </div>
               </div>
