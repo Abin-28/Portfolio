@@ -10,10 +10,10 @@ const ProjectCard = ({ title, description, technologies, link, github, delay }) 
       transition={{ duration: 0.5, delay }}
       className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 border-l-4 border-purple-600"
     >
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-2xl font-bold text-purple-600">{title}</h3>
-          <div className="flex space-x-3">
+      <div className="p-5 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 gap-2 sm:gap-0">
+          <h3 className="text-lg sm:text-2xl font-bold text-purple-600 break-words min-w-0">{title}</h3>
+          <div className="flex space-x-3 self-start sm:self-auto">
             {github && (
               <a
                 href={github}
@@ -36,12 +36,12 @@ const ProjectCard = ({ title, description, technologies, link, github, delay }) 
             )}
           </div>
         </div>
-        <p className="text-gray-700 mb-6">{description}</p>
+        <p className="text-gray-700 mb-4 sm:mb-6 break-words">{description}</p>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm"
+              className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs sm:text-sm"
             >
               {tech}
             </span>
@@ -129,7 +129,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 max-w-6xl mx-auto px-4">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}

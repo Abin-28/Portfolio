@@ -16,16 +16,16 @@ const ExperienceCard = ({ title, company, location, date, description, delay, on
       initial={{ x: -50, opacity: 0 }}
       animate={inView ? { x: 0, opacity: 1 } : {}}
       transition={{ duration: 0.5, delay }}
-      className="bg-white rounded-lg shadow-md p-6 mb-8 hover:shadow-lg transition-shadow duration-300 border-l-4 border-purple-600"
+      className="bg-white rounded-lg shadow-md p-5 sm:p-6 mb-6 sm:mb-8 hover:shadow-lg transition-shadow duration-300 border-l-4 border-purple-600"
     >
-      <div className="flex items-start space-x-4">
-        <div className="bg-purple-100 p-3 rounded-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
+        <div className="bg-purple-100 p-3 rounded-lg shrink-0">
           <FaBriefcase className="text-purple-600 text-xl" />
         </div>
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-purple-600">{title}</h3>
-          <h4 className="text-lg font-semibold text-gray-700">{company}</h4>
-          <div className="flex items-center space-x-4 mt-2 text-sm text-gray-600">
+        <div className="flex-1 min-w-0">
+          <h3 className="text-lg sm:text-xl font-bold text-purple-600 break-words">{title}</h3>
+          <h4 className="text-base sm:text-lg font-semibold text-gray-700 break-words">{company}</h4>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 mt-2 text-sm text-gray-600 space-y-1 sm:space-y-0">
             <div className="flex items-center space-x-1">
               <FaCalendarAlt className="text-purple-600" />
               <span>{date}</span>
@@ -37,7 +37,7 @@ const ExperienceCard = ({ title, company, location, date, description, delay, on
               </div>
             )}
           </div>
-          <p className="text-gray-700 mt-4 leading-relaxed">{description}</p>
+          <p className="text-gray-700 mt-3 sm:mt-4 leading-relaxed break-words">{description}</p>
           {hasCertificate && (
             <button
               onClick={onViewCertificate}

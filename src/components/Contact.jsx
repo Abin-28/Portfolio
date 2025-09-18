@@ -17,19 +17,19 @@ const ContactItem = ({ icon, title, value, link, delay, onClick }) => {
         <div className="bg-purple-100 p-3 rounded-lg">
           {icon}
         </div>
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
           {link && !onClick ? (
             <a
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-600 hover:text-purple-700 transition-colors"
+              className="text-purple-600 hover:text-purple-700 transition-colors break-words text-sm sm:text-base"
             >
               {value}
             </a>
           ) : (
-            <p className="text-gray-600">{value}</p>
+            <p className="text-gray-600 break-words text-sm sm:text-base">{value}</p>
           )}
         </div>
       </div>

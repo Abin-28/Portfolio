@@ -50,15 +50,15 @@ const SkillCategory = ({ title, skills, icon: Icon, delay }) => {
       initial={{ y: 30, opacity: 0 }}
       animate={inView ? { y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.5, delay }}
-      className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-purple-600"
+      className="bg-white rounded-xl shadow-lg p-5 sm:p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-purple-600"
     >
-      <div className="flex items-center space-x-4 mb-6">
+      <div className="flex items-center space-x-3 sm:space-x-4 mb-5 sm:mb-6">
         <div className="bg-purple-100 p-3 rounded-lg">
           <Icon className="text-purple-600 text-xl" />
         </div>
-        <h3 className="text-xl font-bold text-purple-600">{title}</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-purple-600 break-words">{title}</h3>
       </div>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2 sm:gap-3">
         {skills.map((skill, index) => {
           const key = String(skill).toLowerCase();
           const imageUrl = skillImageUrlMap[key] || null;
@@ -68,7 +68,7 @@ const SkillCategory = ({ title, skills, icon: Icon, delay }) => {
               initial={{ scale: 0 }}
               animate={inView ? { scale: 1 } : {}}
               transition={{ duration: 0.3, delay: delay + index * 0.1 }}
-              className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors flex items-center gap-2"
+              className="bg-purple-100 text-purple-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-purple-200 transition-colors flex items-center gap-2"
             >
               {imageUrl && (
                 <img src={imageUrl} alt={`${skill} logo`} className="w-4 h-4" loading="lazy" />
