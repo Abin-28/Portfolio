@@ -245,7 +245,7 @@ const Contact = () => {
           <ContactItem
             icon={<FaEnvelope className="text-2xl text-purple-600" />}
             title="Email"
-            value="abinskaria28@gmail.com"
+            value="abinskaria2802@gmail.com"
             onClick={() => setShowForm(true)}
             delay={0.2}
           />
