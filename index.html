@@ -14,11 +14,21 @@
     <!-- Import Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Abin Skaria - Portfolio</title>
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ded88dd085d0421e953897e40263a505"}'></script>
+    <!-- Cloudflare Web Analytics (disabled on localhost to avoid CORS warnings) -->
+    <script>
+      (function () {
+        var isLocal = /^(localhost|127\.|\[::1\])/.test(location.hostname);
+        if (isLocal) return;
+        var s = document.createElement('script');
+        s.defer = true;
+        s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+        s.setAttribute('data-cf-beacon', '{"token": "ded88dd085d0421e953897e40263a505"}');
+        document.head.appendChild(s);
+      })();
+    </script>
     <!-- End Cloudflare Web Analytics -->
-    <script type="module" crossorigin src="/Portfolio/assets/index-C4SJ-hgX.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-DMhaNL7R.css">
+    <script type="module" crossorigin src="/Portfolio/assets/index-CP3vx0A0.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-DzOHF1Oe.css">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
