@@ -41,6 +41,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [showForm, setShowForm] = useState(false); // email form
   const [showPhoneForm, setShowPhoneForm] = useState(false);
+  const [sendingEmail, setSendingEmail] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -94,11 +95,12 @@ const Contact = () => {
                   action="https://formsubmit.co/abinskaria2802@gmail.com"
                   method="POST"
                   className="space-y-6"
+                  onSubmit={() => setSendingEmail(true)}
                 >
                   <input type="hidden" name="_subject" value="New message from Abin's Portfolio" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_template" value="box" />
-                  <input type="hidden" name="_next" value={typeof window !== 'undefined' ? `${window.location.origin}/#contact` : '/#contact'} />
+                  <input type="hidden" name="_next" value={typeof window !== 'undefined' ? `${window.location.origin}/Portfolio/#contact` : '/Portfolio/#contact'} />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
@@ -139,10 +141,11 @@ const Contact = () => {
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="inline-flex items-center space-x-2 bg-purple-500 hover:bg-purple-600 text-white px-5 py-2.5 rounded-md shadow-sm transition-colors"
+                      disabled={sendingEmail}
+                      className={`inline-flex items-center space-x-2 bg-purple-500 hover:bg-purple-600 text-white px-5 py-2.5 rounded-md shadow-sm transition-colors ${sendingEmail ? 'opacity-70 cursor-not-allowed' : ''}`}
                     >
-                      <FaPaperPlane className="w-4 h-4" />
-                      <span>Submit</span>
+                      <FaPaperPlane className={`w-4 h-4 ${sendingEmail ? 'animate-bounce' : ''}`} />
+                      <span>{sendingEmail ? 'Sending…' : 'Submit'}</span>
                     </button>
                   </div>
                 </form>
